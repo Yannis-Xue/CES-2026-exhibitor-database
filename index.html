@@ -413,9 +413,7 @@
                 selectedProduct: null,
                 
             allTags: [
-                'AI 基础设施', 'AI 芯片', '数据中心 AI', '生成式 AI', 'AI 平台/软件栈',
-                'AI PC/端侧 AI', '边缘 AI', '汽车科技', '工业 AI', '智能硬件',
-                '具身智能', 'AI 家电', '可穿戴 AI', 'AI 办公', '创意娱乐', 'XR'
+                'AI 基础设施', 'AI 芯片', '数据中心 AI', '企业级 AI', '生成式 AI', 'AI 平台/软件栈', 'AI PC/端侧 AI', '边缘 AI', '汽车科技', '工业 AI', '智能硬件', 'AI 安全与隐私', '行业垂直 AI', 'AI 传感器', 'XR'
             ],
 
                 get filteredExhibitors() {
@@ -493,12 +491,42 @@
                         ]
                     },
                     {
+                        id: 'razer',
+                        name: 'Razer',
+                        logo: 'https://upload.wikimedia.org/wikipedia/en/4/40/Razer_snake_logo.svg',
+                        coverImage: 'https://assets2.razerzone.com/images/pnx.assets/8ab91502717428f8b7cb37f6d09e4e64/razer-ces2026-hero_desktop-1920x700.webp',
+                        boothCover: 'https://assets2.razerzone.com/images/pnx.assets/8ab91502717428f8b7cb37f6d09e4e64/razer-ces2026-hero_desktop-1920x700.webp',
+                        tags: ['智能硬件', '生成式 AI', 'XR'],
+                        desc: 'Razer 致力于探索“AI硬件化”的新形态，通过全息技术与生成式 AI 打造具备情感价值的“桌面伴侣”。',
+                        slogan: 'For Gamers. By Gamers.',
+                        longDesc: 'Razer Inc.成立于2005年，总部位于美国加利福尼亚州和新加坡，是全球知名的游戏硬件与周边设备品牌。公司以高性能游戏笔记本、键盘、鼠标、耳机、控制器及电竞设备见长，同时逐步将品牌战略扩展至AI驱动体验、开发者平台和多感官交互技术。Razer的核心竞争力在于游戏与玩家文化深度结合的产品设计能力、高度可定制的RGB生态（Chroma）、以及不断拓展的硬件软件集成平台。通过聚焦电竞、创作与未来互动体验，Razer已从传统外设厂商发展成为“游戏生活方式品牌”。在CES 2026上，Razer展示了其迄今为止最大规模的展会布局，围绕AI驱动、沉浸式体验与开发者平台构建未来游戏生态，推出包括AI办公/游戏伙伴设备、可穿戴AI设备、开发者工作站、控制器与多感官设备。',
+                        website: 'https://www.razer.com',
+                        videos: [
+                            {
+                                embed: '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/_QDthx_WjwE" title="Razer Project AVA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+                                title: 'Razer Project AVA Trailer',
+                                source: 'YouTube'
+                            }
+                        ],
+                        productStrategy: '将冰冷的硬件升级为具备情感价值的“桌面伴侣”，抢占 Gen-Z 用户的桌面C位。',
+                        products: [
+                            {
+                                id: 'project-ava',
+                                name: 'Razer Project AVA',
+                                image: 'https://assets2.razerzone.com/images/pnx.assets/158552b1fd4c18ce2f6850164fdc3104/razer-project-ava-ces-2026-hero-desktop.webp',
+                                desc: 'Project AVA 是 Razer 在 CES 2026 推出的前瞻概念产品，定位为 桌面级 AI 伴侣与智能助理。它将 全息 3D 动态头像、先进的 AI 学习引擎、个性化交互和实时上下文理解结合起来，不仅提供游戏策略建议，还能应对日常任务、生活组织和创造性问题。AVA 结合 全息动画、眼神追踪、面部表情与唇形同步技术，打造更具“拟人感”的交互体验。Razer 表示它可支持多种性格设定、个性化学习以及情境感知，以更自然的方式提供支持。',
+                                specs: ['5.5-inch Transparent Holographic Screen', 'Chroma RGB Support', 'Built-in Local LLM'],
+                                scenarios: '桌面陪伴、游戏互动、AI 助手'
+                            }
+                        ]
+                    },
+                    {
                         id: 'lego',
                         name: 'LEGO',
                         logo: 'https://upload.wikimedia.org/wikipedia/commons/2/24/LEGO_logo.svg',
                         coverImage: 'https://images.unsplash.com/photo-1585366119957-e9730b6d0f60?q=80&w=1600',
                         boothCover: 'https://images.unsplash.com/photo-1585366119957-e9730b6d0f60?q=80&w=1600',
-                        tags: ['Phygital', '智能玩具', '数字化转型'],
+                        tags: ['智能硬件', 'AI 传感器'],
                         desc: '乐高 CES 2026 推出 Smart Play 系统，通过内嵌芯片的积木重新定义“Phygital”玩乐模式。',
                         slogan: 'Rebuilding the Future of Play',
                         longDesc: 'The LEGO Group 成立于1932年，总部位于丹麦比隆，是全球最著名的积木玩具与创意构建品牌。公司以其高品质的积木系统（LEGO System-in-Play）和鼓励创造力的产品闻名于世，同时通过不断创新保持与新一代玩家的深度连接。乐高的核心技术与竞争力源于其独特的模块化构建系统、跨年龄段互动玩法设计及强大的品牌与文化生态合作，使其成为全球家庭与教育场景下不可替代的玩具与创意媒介。在CES 2026上，乐高官方重点发布了其历史性创新——LEGO SMART Play™平台，旨在将传统积木游戏与互动技术无缝融合，为积木玩法注入实时动作反应、声音、灯光与互动体验，推动品牌从“实体玩具”向“物理-互动体验系统”演进。',
