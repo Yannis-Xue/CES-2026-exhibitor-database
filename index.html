@@ -8,6 +8,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Alpine.js -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Twitter Widget -->
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
@@ -324,7 +326,7 @@
                         <template x-for="video in currentExhibitor.videos" :key="video.title">
                             <div class="bg-black rounded-2xl overflow-hidden border border-gray-800 shadow-2xl max-w-4xl mx-auto mb-8">
                                 <div class="aspect-video-container">
-                                    <div x-html="video.embed"></div>
+                                    <div x-html="video.embed" x-init="$nextTick(() => window.twttr?.widgets?.load($el))"></div>
                                 </div>
                                 <div class="p-6">
                                     <h3 class="text-xl font-bold mb-2" x-text="video.title"></h3>
@@ -503,8 +505,8 @@
                         website: 'https://www.cybopal.com',
                         videos: [
                             {
-                                embed: '<iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1392106065633469&show_text=0&width=560" width="100%" height="100%" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>',
-                                title: 'CyboPal ONE Hands-on',
+                                embed: '<iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F61578691719218%2Fvideos%2F2834832593389128%2F&show_text=0&width=560" width="100%" height="100%" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>',
+                                title: 'CyboPal Founder Demo',
                                 source: 'Facebook'
                             }
                         ],
@@ -513,7 +515,7 @@
                             {
                                 id: 'cybopal-one',
                                 name: 'CyboPal ONE：全球首款会动的桌面伙伴',
-                                image: 'https://q5.itc.cn/q_70/images03/20260107/26e96ee5a3ad478498c0ecf90d12370e.jpeg',
+                                image: 'https://cybopal.com/cdn/shop/files/Frame_39866_c4574a28-e500-4941-89b2-eaf342ab7b57.png?v=1762328390&width=2000',
                                 desc: '显示器自带 6 轴机械臂底座，配合 AI 视觉追踪，始终保持屏幕与视线垂直，实现主动人体工学调节。',
                                 specs: ['27寸 4K OLED', '6 自由度自动调节', 'AI 视觉姿态捕捉', '手势隔空操控'],
                                 scenarios: '健康办公、创意设计、沉浸式娱乐'
@@ -533,9 +535,14 @@
                         website: 'https://www.razer.com',
                         videos: [
                             {
-                                embed: '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/_QDthx_WjwE" title="Razer Project AVA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+                                embed: '<iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fgameoneph%2Fvideos%2Fmeet-razer-project-ava-your-ultimate-ai-companion-from-organizing-your-day-to-br%2F761838549682056%2F&show_text=0&width=560" width="100%" height="100%" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>',
                                 title: 'Razer Project AVA Trailer',
-                                source: 'YouTube'
+                                source: 'Facebook'
+                            },
+                            {
+                                embed: '<iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F864050806539532&show_text=0&width=560" width="100%" height="100%" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>',
+                                title: 'Augmented Computer Vision',
+                                source: 'Facebook'
                             }
                         ],
                         productStrategy: '将冰冷的硬件升级为具备情感价值的“桌面伴侣”，抢占 Gen-Z 用户的桌面C位。',
@@ -547,6 +554,14 @@
                                 desc: 'Project AVA 是 Razer 在 CES 2026 推出的前瞻概念产品，定位为 桌面级 AI 伴侣与智能助理。它将 全息 3D 动态头像、先进的 AI 学习引擎、个性化交互和实时上下文理解结合起来，不仅提供游戏策略建议，还能应对日常任务、生活组织和创造性问题。AVA 结合 全息动画、眼神追踪、面部表情与唇形同步技术，打造更具“拟人感”的交互体验。Razer 表示它可支持多种性格设定、个性化学习以及情境感知，以更自然的方式提供支持。',
                                 specs: ['5.5-inch Transparent Holographic Screen', 'Chroma RGB Support', 'Built-in Local LLM'],
                                 scenarios: '桌面陪伴、游戏互动、AI 助手'
+                            },
+                            {
+                                id: 'Project Motoko',
+                                name: 'Project Motoko',
+                                image: 'https://assets2.razerzone.com/images/pnx.assets/dff18701825fa7df1c6cd10719419006/razer-project-motoko-compalibility-desktop.webp',
+                                desc: 'Project Motoko搭载Snapdragon®平台，是一款AI原生的无线头显概念，具备通过双第一人称摄像头、智能音频反馈以及双远程和近场麦克风实现增强AI视觉感知，实现高级音频检测。它在领先AI平台上实现普遍兼容性，提升了生产力、游戏和日常生活，同时提供人类视角视觉数据，支持机器人训练和AI模型开发。',
+                                specs: ['图像感知：双 FPV 摄像头实现立体深度感知', '麦克风系统：远场 + 近场双麦克风', 'AI Assist：对象检测、语义分析','兼容性：支持多平台 AI（如 Grok、OpenAI、Gemini）'],
+                                scenarios: '增强现实辅助互动体验、学习与实时翻译场景、新型游戏体验拓展'
                             }
                         ]
                     },
@@ -713,7 +728,7 @@
                         logo: 'https://pic.baike.soso.com/ugc/baikepic2/0/20230327222856-424971172_jpeg_549_535_54825.jpg/300',
                         coverImage: 'https://pic.cyol.com/img/20260108/img_9601fcc2553699dfaf062b1e12a32dd7ff70.jpeg',
                         boothCover: 'https://pic.cyol.com/img/20260108/img_9601fcc2553699dfaf062b1e12a32dd7ff70.jpeg',
-                    tags: ['具身智能', '智能硬件', '工业 AI'],
+                        tags: ['智能硬件', '工业 AI', '边缘 AI'],
                         desc: '宇树科技展示通用人形机器人与消费级四足机器人，引领具身智能浪潮。',
                         slogan: '让人类与机器人共生',
                         longDesc: '杭州宇树科技（Unitree Robotics）成立于2016年，总部位于中国浙江省杭州市，是一家专注于通用运动机器人、四足机器人与人形机器人研发、制造与商业应用的高科技公司。公司产品涵盖从消费级家庭娱乐机器人到工业级自主行动平台，已在多个国内外科技展览与商用场景中亮相。作为中国机器人产业的重要参与者之一，宇树科技的核心竞争力在于高运动自由度机械结构设计、实时感知与控制系统、强交互能力与产业级自动化适配能力。此外，它还积极推进消费化机器人市场与服务型机器人生态的落地，包括机器人表演、互动体验和商业部署。在CES 2026展会上，宇树科技重点展示了其代表性的人形机器人与多款互动机器人产品，围绕“现实环境感知 + 人机互动能力”打造了多套现场体验与动态演示，吸引了大量参观者驻足。。',
@@ -753,10 +768,10 @@
                     {
                         id: 'boston-dynamics',
                         name: 'Boston Dynamics',
-                        logo: 'https://robotics.ucr.edu/sites/default/files/styles/form_preview/public/boston_dynamics_logo_.png?itok=DQdiaoiZ',
+                        logo: 'https://asset.brandfetch.io/idtu7CFTG5/idxy0KfAdu.png',
                         coverImage: 'https://bostondynamics.com/wp-content/uploads/2026/01/69733-image-hyundai-motor-group-announces-ai-robotics-strategy-to-lead-human-centered-robotics-era-at-ces-2026-1-1024x576.jpg',
                         boothCover: 'https://bostondynamics.com/wp-content/uploads/2026/01/69733-image-hyundai-motor-group-announces-ai-robotics-strategy-to-lead-human-centered-robotics-era-at-ces-2026-1-1024x576.jpg',
-                    tags: ['具身智能', '工业 AI'],
+                        tags: ['智能硬件', '工业 AI', '边缘 AI'],
                         desc: 'Boston Dynamics 展示全电动 Atlas 机器人的商业化应用场景，以及 Spot 机器人的工业巡检新功能。',
                         slogan: '改变你对机器人的认知',
                         longDesc: 'Boston Dynamics成立于1992年，总部位于美国马萨诸塞州，是全球领先的智能机器人研发公司之一。公司以推进动态平衡与高机动性机器人技术著称，其开发的机器人产品如Spot四足机器人、Stretch物流机器人和Atlas人形机器人已在多个行业展示出卓越性能与应用前景。核心技术领域包括动态运动控制（Balance & Locomotion）、多自由度机器人机械设计、实时感知与AI驱动决策控制。公司技术竞争力在于将复杂机械系统与先进的控制算法、高效传感和实时反馈闭环集成，形成高可靠性的跨场景机器人平台。在CES 2026上，Boston Dynamics（由其母公司Hyundai Motor Group推动）重点展示其最新量产级人形机器人Atlas及整体工业机器人愿景，标志着其从「研究示范」向「商业部署」迈出实质性一步，重点突出humanoid robotics在制造与协作场景的落地潜力。',
@@ -791,7 +806,7 @@
                     {
                         id: 'tuya',
                         name: 'Tuya Smart',
-                        logo: 'https://seaimagesgaz428.cdn5th.com/rms-static/9ba11f10-e6f0-11ec-a0c1-c9688f19b248-1654668161921.jpg?tyName=share-og-image.jpg',
+                        logo: 'https://tse1.mm.bing.net/th/id/OIP.cwhVlSjtsPpjHXS2ge4IiwAAAA?rs=1&pid=ImgDetMain&o=7&rm=3',
                         coverImage: 'https://seaimagesdym6y.cdn5th.com/goat/202619/0db706b5-fcfd-425f-93ea-6ad1faff8661.jpg',
                         boothCover: 'https://seaimagesdym6y.cdn5th.com/goat/202619/0db706b5-fcfd-425f-93ea-6ad1faff8661.jpg',
                     tags: ['AI 平台/软件栈', '智能硬件', '生成式 AI'],
@@ -884,10 +899,10 @@
                     {
                         id: 'samsung',
                         name: 'Samsung',
-                        logo: 'https://images.samsung.com/is/image/samsung/assets/cn/about-us/brand/logo/mo/256_144_4.png?$512_N_PNG$',
+                        logo: 'https://th.bing.com/th/id/OIP.V4N5L_EV0lqxXLS0a6RygAAAAA?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3',
                         coverImage: 'https://img.global.news.samsung.com/global/wp-content/uploads/2025/11/05174838/Samsung-Corporate-More-Stories-CES-2026-CES%C2%AE-2026-Innovation-Awards-Consumer-Technology-Association_main1.jpg',
                         boothCover: 'https://img.global.news.samsung.com/global/wp-content/uploads/2025/11/05174838/Samsung-Corporate-More-Stories-CES-2026-CES%C2%AE-2026-Innovation-Awards-Consumer-Technology-Association_main1.jpg',
-                    tags: ['AI 家电', 'AI PC/端侧 AI', '智能硬件'],
+                        tags: ['智能硬件', 'AI PC/端侧 AI', '生成式 AI'],
                         desc: '三星电子在 CES 2026 以“Your Companion to AI Living”为核心展示主题，提出全面将 AI 融入家庭、移动、显示、家电等终端设备和日常体验的愿景，强调 AI 将从响应式工具进化为用户身边的智能伙伴。',
                         slogan: 'AI for All: Connectivity in the Age of AI',
                         longDesc: 'Samsung Electronics成立于1938年，总部位于韩国首尔，是全球领先的科技公司之一，在半导体、移动设备、显示、家电和计算平台等领域拥有极强的市场地位和技术实力。三星在全球范围内拥有数十万名员工，年度营收规模达数千亿美元级别，是韩国最大企业和全球科技巨头之一。三星的核心技术领域包括智能手机与移动系统、超高清显示与OLED/MicroLED技术、AIoT与智能家电生态、内存与系统半导体、图像传感与通信技术。其竞争力来源于端到端产业链整合能力、先进制造技术、强大的品牌影响力与全球生态联动能力。在CES 2026上，三星重点展示了其AI驱动的终端产品与平台策略，同时通过独立展区方式呈现从设备硬件、AI服务到人与设备交互的全面战略布局。',
@@ -933,7 +948,7 @@
                         logo: 'https://www.lg.com/content/dam/lge/global/our-brand/src/mocks/bs0002/brand-elements-logo-primary-d.svg',
                         coverImage: 'https://www.lg.com/content/dam/master/gmc/brand-management-division/brand-experience/ces2026/global-site/teasing/Home-hero-ces2026-desktop-global.png',
                         boothCover: 'https://www.lg.com/content/dam/master/gmc/brand-management-division/brand-experience/ces2026/global-site/teasing/Home-hero-ces2026-desktop-global.png',
-                    tags: ['AI 家电', '汽车科技', '智能硬件'],
+                        tags: ['智能硬件', '汽车科技', '生成式 AI'],
                         desc: '在 CES 2026，LG 以 “情感智能体验与多场景 AI 协同” 为核心战略，展示了贯穿 家居、移动、车载与未来生活空间 的创新产品和体验平台。这些产品整合了先进的 AI、传感技术以及与合作伙伴生态的深度联动。',
                         slogan: 'Innovation for a Better Life',
                         longDesc: 'LG Electronics成立于1958年（总部位于韩国首尔。它是全球领先的消费电子、智能家电、显示与移动技术公司，产品覆盖智能电视、家庭娱乐系统、智能家电、通信设备、显示面板与自动驾驶/车载解决方案等多个领域。LG的强项在于端到端技术整合能力、显示与交互创新、全球制造与生态体系支持，在消费者电子与智能生活领域拥有稳固地位。在CES 2026上，LG的参展重点围绕情感智能交互与AI驱动生态进化，同时展示其在家居、显示、移动、汽车与机器人技术的最新成果。',
@@ -973,8 +988,104 @@
                             }
                         ]
                     },
-
-
+                    {
+                        id: 'jackery',
+                        name: 'Jackery',
+                        logo: 'https://cdn.brandfetch.io/idY-kE4Js3/w/400/h/400/theme/dark/icon.png?c=1bxid64Mup7aczewSAYMX',
+                        coverImage: 'https://ml.globenewswire.com/Resource/Download/ed548ea5-d8e2-4e8d-852e-b2b6d7bcff0d/booth-hero.jpg',
+                        boothCover: 'https://ml.globenewswire.com/Resource/Download/ed548ea5-d8e2-4e8d-852e-b2b6d7bcff0d/booth-hero.jpg',
+                        tags: ['智能硬件', 'AI 传感器', '工业 AI'],
+                        desc: '全球便携式储能领域的行业龙头，聚焦“能源自动化”，展示从“人找电”到“电找人”的范式转移。',
+                        slogan: '聚焦能源自动化，从“人找电”到“电找人”',
+                        longDesc: 'Jackery是华宝新能旗下的消费能源品牌，专注于便携储能、电力解决方案与绿色能源系统。华宝新能作为能源与储能领域的创新企业，在CES 2026上重点展示其家庭绿电解决方案、光储技术与AI/机器人跨界融合的新能源产品，强调能源系统的可持续性、可靠性与智能化。公司在可再生能源发电与储能集成、家庭备用电力系统和移动能源生态构建方面具备深厚技术积累与全球化市场部署能力。',
+                        website: 'https://www.jackery.com',
+                        videos: [
+                            {
+                                embed: '<iframe src="https://player.bilibili.com/player.html?bvid=BV1Nr6dBPEsv&page=1&t=9" scrolling="no" border="0" frameborder="0" framespacing="0" allowfullscreen="true" width="100%" height="100%"> </iframe>',
+                                title: 'Jackery Solar Mars Bot Concept',
+                                source: 'Bilibili | 雷科技'
+                            }
+                        ],
+                        productStrategy: '能源自动化：通过光储机器人实现智能追光与自动充电，重新定义离网能源获取方式。',
+                        products: [
+                            {
+                                id: 'solar-mars-bot',
+                                name: 'Solar Mars Bot',
+                                image: 'https://rv-pro.com/wp-content/uploads/2024/01/best-inventions-2023-jackery-solar-mars-bot.jpg.webp',
+                                desc: 'Solar Mars Bot 是 Jackery 在 CES 2026 上重点展示的光储机器人解决方案，是“光伏 + 储能 + 移动供电”概念的实物化产品。它可在离网环境下为具身机器人、机器狗、边缘设备等智能装备提供移动能源补给，在家庭场景下也可作为“移动电力中枢”，在偏远地区、应急救援任务中表现出色。该产品曾入选《时代周刊》年度最佳发明，并代表 Jackery 在新能源与智能自动化能源解决方案上的跨界创新。',
+                                specs: ['2000Wh容量', '600W折叠光伏板', '自动避障导航','适配负载：星链设备、具身机器人、专业装备'],
+                                scenarios: '无电网覆盖的偏远作业、灾后救援、智慧巡检机器人与移动设备能源供给、家庭应急备用电与户外活动'
+                            }
+                        ]
+                    },
+                    {
+                        id: 'sharpa',
+                        name: 'Sharpa Robotics',
+                        logo: 'https://tse2.mm.bing.net/th/id/OIP.ue9SlnmMTYDWRThsFDh_4gAAAA?rs=1&pid=ImgDetMain&o=7&rm=3',
+                        coverImage: 'https://cdn.shopify.com/s/files/1/0753/2347/4020/files/fe01280ac08e20bbcd1431279ae09074.png?v=1765857744',
+                        boothCover: 'https://cdn.shopify.com/s/files/1/0753/2347/4020/files/fe01280ac08e20bbcd1431279ae09074.png?v=1765857744',
+                        tags: ['智能硬件', '工业 AI', 'AI 传感器'],
+                        desc: '专注于突破人形机器人“灵巧操作”瓶颈，核心竞争力在于高精度触觉传感阵列与仿生手算法。',
+                        slogan: 'We Manufacture Time by Making Robots Useful',
+                        longDesc: 'Sharpa Robotics成立于2024年，是一家总部位于新加坡的AI机器人公司，致力于打造高性能机器人系统和核心组件，加速机器人从实验室向现实世界的落地应用。公司由向少卿（Shaoqing Xiang）、李一帆（David Li）与孙恺（Kai Sun）联合创立，他们此前曾在激光雷达、AI、自动驾驶与机器人技术领域积累深厚经验。向少卿曾是激光雷达企业禾赛科技（Hesai Technology）联合创始人之一，具备丰富感知与自动化技术背景；李一帆与孙恺也分别在AI与机器人研发领域拥有多年技术投入与团队领导经验。在CES 2026上，Sharpa展示了其针对自主精细操作与真实机器人工作场景的整体成果，包括获奖组件、全身机器人整机与AI推理系统等核心产品，重点强调集成硬件与高级AI操作能力的突破性进展。',
+                        website: 'https://www.sharpa.com/',
+                        videos: [
+                            {
+                                embed: '<iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fbazaartimes%2Fvideos%2Fsharpa-showcased-a-fully-autonomous-windmill-assembly-demonstration-at-ces-2026-%2F1420991586339542%2F&show_text=0&width=560" width="100%" height="100%" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>',
+                                title: 'Sharpa Robot Folding Windmill',
+                                source: 'Facebook'
+                            }
+                        ],
+                        productStrategy: '为精密制造与家庭服务奠定技术基石',
+                        products: [
+                            {
+                                id: 'SharpaWave',
+                                name: 'SharpaWave（灵巧机器人手）',
+                                image: 'https://cdn.shopify.com/s/files/1/0753/2347/4020/files/9d1632831d74d2d0882a18523a41dcb3.png?v=1765857754',
+                                desc: 'SharpaWave 是 Sharpa 的旗舰机器人操作组件，具备接近人类手部的操作能力，用于多个机器人平台或研究机构的集成。它致力于突破机器人在现实应用中最关键的“精细操作”难题，可在多种工具和工件上实现可靠抓握、操作与控制。',
+                                specs: ['自由度：22 个主动自由度（DOF）', '动态触觉阵列（DTA）技术：超过 1,000 个触觉像素', '力觉检测范围：最高精度 0.005 N（从轻触到强力抓取）','6 维力检测：确保抓取稳定与防滑控制'],
+                                scenarios: '复杂工件搬运与精细装配、机器人抓取与操作研发、教育与研发机构实验平台、通用机器人制造商与软硬件集成商'
+                            },
+                            {
+                                id: 'Sharpa North',
+                                name: 'Sharpa North：会折纸风车的人形机器人',
+                                image: 'https://img.36krcdn.com/hsossms/20260120/v2_2946f0fecf774713a28e8d2955c550de@6227116_img_gif?x-oss-process=image/quality,q_100',
+                                desc: 'North 是 Sharpa 在 CES 2026 上正式发布的 全身机器人整机，集成了 SharpaWave 灵巧手与公司自主 AI 推理模型 CraftNet，可执行一系列高难度自主任务。North 的现场展示强调其在不同情境中连续操作与长期策略推理的能力。',
+                                specs: ['集成执行器：双 SharpaWave 机械手', 'AI 推理模型：CraftNet（Vision-Tactile-Language-Action 结构）', '自主任务能力：实时视觉理解 + 触觉反馈结合','演示能力：执行多步骤连续自主任务'],
+                                scenarios: '自动化任务执行（如材料搬运、产品装配）、实验室与研发验证平台、服务机器人超级集成测试、企业级机器人部署与实验场景'
+                            }
+                        ]
+                    },
+                    {
+                        id: 'seattle-ultrasonics',
+                        name: 'Seattle Ultrasonics',
+                        logo: 'https://yt3.googleusercontent.com/Hwa19hrDINBkduwsN955rGn1QNK6o6uL1XSqPRrfVB34FyNTDBUX9gYo7CXw0LF1yujRVDBKTrs=s900-c-k-c0x00ffffff-no-rj',
+                        coverImage: 'https://cdn.eftm.com/wp-content/uploads/2026/01/Robot-Cutting-Tests.jpg',
+                        boothCover: 'https://cdn.eftm.com/wp-content/uploads/2026/01/Robot-Cutting-Tests.jpg',
+                        tags: ['智能硬件', '行业垂直 AI'],
+                        desc: '食品科技硬件领域的先锋，专注于将工业级超声波切割技术的微型化应用。',
+                        slogan: '无摩擦切割，重塑烹饪体验',
+                        longDesc: 'Seattle Ultrasonics是一家成立于2023年的美国初创企业，总部位于华盛顿州西雅图，属于电器与厨房硬件创新制造领域。作为食品科技硬件领域的先锋，公司专注于将工业级超声波切割技术的微型化应用；本次 CES 2026，公司旨在通过展示其独家专利的 PZT-8 压电陶瓷驱动系统，向全球市场证明“无摩擦切割”能彻底重塑家庭烹饪体验，并以此切入高端厨具与康复辅助医疗器械市场。',
+                        website: 'https://seattleultrasonics.com',
+                        videos: [
+                            {
+                                embed: '<iframe src="https://player.bilibili.com/player.html?bvid=BV1taksBdEkZ&page=1" scrolling="no" border="0" frameborder="0" framespacing="0" allowfullscreen="true" width="100%" height="100%"> </iframe>',
+                                title: 'CES 2026: Ultrasonic Knife Demo',
+                                source: 'Bilibili | 胖爷科技说'
+                            }
+                        ],
+                        productStrategy: '通过“无摩擦切割”技术切入高端厨具市场。',
+                        products: [
+                            {
+                                id: 'ultrasonics-chefs-knife',
+                                name: 'C-200 Ultrasonic Chef Knife：超声波厨师刀',
+                                image: 'https://helios-i.mashable.com/imagery/articles/06dbTntGaWALSTWTvS9jR04/hero-image.fill.size_1248x702.v1768249914.png',
+                                desc: 'C-200 是专为家庭厨师设计的 超声波厨刀，它在刀刃上集成了高频振动模块，使刀刃以 约 30,000 次/秒 的超声波振动运行，从而显著减少切割阻力、提升流畅度，并减少食材与刀面之间的黏连。',
+                                specs: ['8英寸AUS-10钢刃', '振幅15μm', 'Type-C充电', '30kHz高频振动'],
+                                scenarios: '高端家庭烹饪、专业厨房'
+                            }
+                        ]
+                    }
                 ],
 
                 // Actions
